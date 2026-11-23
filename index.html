@@ -250,7 +250,7 @@ section{position:relative;padding:110px 0}
 .contact h2{font-family:var(--display);font-weight:800;font-size:clamp(48px,7vw,96px);line-height:.96;letter-spacing:-.04em;margin-bottom:28px}
 .contact h2 .q{color:var(--red)}
 .contact .lead{color:var(--ink2);max-width:46ch;margin-bottom:30px}
-.brush{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px 14px;max-width:100%;background:var(--ink);color:#fff;padding:16px 26px;clip-path:polygon(1% 8%,24% 0,52% 6%,80% 0,99% 6%,100% 50%,98% 94%,74% 100%,46% 93%,18% 100%,0 92%,2% 50%);transition:transform .2s}
+.brush{display:inline-flex;flex-wrap:nowrap;align-items:center;gap:6px 14px;max-width:100%;background:var(--ink);color:#fff;padding:16px 26px;clip-path:polygon(1% 8%,24% 0,52% 6%,80% 0,99% 6%,100% 50%,98% 94%,74% 100%,46% 93%,18% 100%,0 92%,2% 50%);transition:transform .2s}
 .brush:hover{transform:rotate(-1deg) scale(1.02)}
 .brush svg{width:22px;height:22px}
 .brush b{font-family:var(--hand);font-weight:400;font-size:22px}
@@ -452,6 +452,7 @@ button.stat:hover b{background:linear-gradient(transparent 58%,var(--note-p) 58%
   .pc-arrow{display:none}
   .pc-note{right:6px}
   .socials>span{width:100%}
+  .brush{flex-wrap:wrap}
   .modal{padding:0}
   .mbox{min-height:100%}
   .mhead{height:230px}
