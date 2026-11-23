@@ -321,7 +321,8 @@ button.stat:hover b{background:linear-gradient(transparent 58%,var(--note-p) 58%
 .up{width:52px;height:52px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;transition:.2s}
 .up:hover{background:#fff;color:var(--ink)}
 .up svg{width:20px;height:20px}
-.giant{font-family:var(--display);font-weight:800;font-size:clamp(48px,11.4vw,150px);line-height:1.12;padding-top:.08em;letter-spacing:-.04em;color:#2a2a2a;white-space:nowrap;overflow:hidden;margin:44px 0 18px;user-select:none}
+.giant{font-family:var(--display);font-weight:800;font-size:clamp(34px,8.6vw,118px);line-height:1.15;padding-top:.12em;letter-spacing:-.03em;color:#2a2a2a;white-space:nowrap;text-align:center;margin:40px 0 18px;user-select:none}
+.giant span{display:inline-block}
 .foot-bot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 0 28px;border-top:1px solid #333;font-size:13.5px;color:#a9a59d}
 .foot-bot a{color:#fff;border-bottom:1px solid #777}
 
@@ -2333,7 +2334,7 @@ function renderFooter(){
   $('#foot').innerHTML = '<div class="wrap"><div class="foot-top"><a class="logo" href="#top"><b>' + esc(S.name) + '</b><small>' + esc(S.kicker) + '</small></a>' +
     '<ul>' + S.nav.slice(1).map(function(n){ return '<li><a href="#' + n[0] + '">' + esc(n[1]) + '</a></li>'; }).join('') + '</ul>' +
     '<a class="up" href="#top" aria-label="Lên đầu trang">' + ICON.up + '</a></div>' +
-    '<div class="giant" aria-hidden="true">' + esc(S.name.toUpperCase()) + '</div>' +
+    '<div class="giant" aria-hidden="true"><span>' + esc(S.name.toUpperCase()) + '</span></div>' +
     '<div class="foot-bot"><span>' + esc(D.footer.copy) + '</span><a href="' + esc(S.game) + '" target="_blank" rel="noopener">' + esc(D.footer.game) + ' ↗</a></div></div>';
 }
 
@@ -2530,7 +2531,16 @@ function drawString(){
   path.getBoundingClientRect(); path.style.transition = 'stroke-dashoffset 2.2s cubic-bezier(.4,.1,.2,1) .3s'; path.style.strokeDashoffset = 0;
 }
 var rs; window.addEventListener('resize', function(){ clearTimeout(rs); rs = setTimeout(function(){ var p = $('#stringPath'); if (p) { p.style.transition = 'none'; } drawString(); }, 150); });
-(document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(function(){ setTimeout(drawString, 60); });
+/* chữ tên lớn ở chân trang: tự co cỡ chữ để luôn hiện đủ cả tên, không bị cắt */
+function fitGiant(){
+  var g = $('.giant'), s = g && $('span', g); if (!s) return;
+  g.style.fontSize = '';
+  var avail = g.clientWidth, w = s.getBoundingClientRect().width;
+  if (w > avail) g.style.fontSize = (parseFloat(getComputedStyle(g).fontSize) * avail / w * 0.98).toFixed(1) + 'px';
+}
+window.addEventListener('resize', fitGiant);
+fitGiant();
+(document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(function(){ setTimeout(drawString, 60); fitGiant(); });
 
 /* ghi chú hero lắc nhẹ theo chuột (desktop) */
 if (window.matchMedia('(pointer:fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
