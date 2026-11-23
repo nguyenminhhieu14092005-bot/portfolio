@@ -240,14 +240,13 @@ section{position:relative;padding:110px 0}
 .step p{font-size:14.5px;color:var(--ink2)}
 .partners{display:flex;align-items:center;gap:36px;flex-wrap:wrap;border-top:2px dashed #b9b4aa;border-bottom:2px dashed #b9b4aa;padding:26px 0;margin-top:90px}
 .partners>span{font-family:var(--hand);font-size:18px;color:var(--ink2)}
-.partners b{font-weight:400;font-size:22px;color:#4a4842;white-space:nowrap}
 .p-sans{font-family:var(--display);font-weight:700}
 .p-bold{font-family:var(--display);font-weight:800;letter-spacing:-.02em}
 .p-serif{font-family:Georgia,'Times New Roman',serif;font-style:italic}
 .p-hand{font-family:var(--hand)}
 
 /* ---------- contact ---------- */
-.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,470px);gap:60px;align-items:center}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,590px);gap:50px;align-items:center}
 .contact h2{font-family:var(--display);font-weight:800;font-size:clamp(48px,7vw,96px);line-height:.96;letter-spacing:-.04em;margin-bottom:28px}
 .contact h2 .q{color:var(--red)}
 .contact .lead{color:var(--ink2);max-width:46ch;margin-bottom:30px}
@@ -265,18 +264,49 @@ section{position:relative;padding:110px 0}
 .socials a:hover .tip,.socials button:hover .tip,.tip.show{display:block;opacity:1}
 .info{display:grid;gap:4px;margin-top:22px;font-size:14.5px;color:var(--ink2)}
 .info b{color:var(--ink);font-weight:600}
-.paper{position:relative;background:#fbfaf6;box-shadow:var(--shadow2);padding:44px 30px 30px 64px;transform:rotate(1.6deg);background-image:repeating-linear-gradient(transparent 0 35px,#c9d7ea 35px 36px);background-position:0 18px}
-.paper::before{content:"";position:absolute;left:44px;top:0;bottom:0;width:2px;background:rgba(215,38,30,.55)}
-.paper .tape{top:-12px;left:50%;margin-left:-46px;transform:rotate(-4deg)}
-.paper h3{font-family:var(--hand);font-weight:400;font-size:28px;margin-bottom:10px}
-.paper label{display:block;font-family:var(--hand);font-size:16px;color:var(--mute);margin-top:12px}
-.paper input,.paper select,.paper textarea{width:100%;font:inherit;font-size:15.5px;border:0;border-bottom:2px solid var(--ink);background:transparent;padding:6px 2px;outline:none;border-radius:0;color:var(--ink)}
-.paper textarea{resize:vertical;min-height:84px;line-height:1.5}
-.paper input:focus,.paper select:focus,.paper textarea:focus{border-color:var(--red)}
-.paper .btn{margin-top:22px}
-.paper .formnote{font-size:13px;color:var(--mute);margin-top:14px;line-height:1.45;min-height:1em}
-.paper .formnote.ok{color:#1f7a4d}
-.err{color:var(--red2);font-size:13px;font-family:var(--body)}
+
+/* contact postcard */
+.postwrap{position:relative;padding:34px 0 96px 10px}
+.postcard{position:relative;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);background:#fbf8f0;box-shadow:var(--shadow2);transform:rotate(2deg);min-height:300px;background-image:radial-gradient(rgba(160,130,80,.06) 1px,transparent 1px);background-size:6px 6px}
+.postcard .tape{top:-12px;left:28px;transform:rotate(-6deg)}
+.pc-msg{padding:34px 22px 26px 28px;border-right:2px solid #d9d2c2;display:flex;flex-direction:column}
+.pc-msg small{font-family:var(--display);font-weight:700;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.pc-msg p{font-family:var(--hand);font-size:21px;line-height:1.35;margin:14px 0 10px;color:var(--ink)}
+.pc-msg b{font-family:var(--hand);font-weight:400;font-size:24px;color:var(--red);margin-top:auto}
+.pc-addr{position:relative;padding:112px 18px 22px 20px}
+.pc-addr>small{font-family:var(--hand);font-size:15px;color:var(--mute)}
+.pc-stamp{position:absolute;right:20px;top:20px;width:72px;height:88px;background:#fff;padding:5px;box-shadow:0 1px 3px rgba(0,0,0,.2);-webkit-mask:radial-gradient(circle 3px at 3px 3px,transparent 98%,#000) -3px -3px/9px 9px;mask:radial-gradient(circle 3px at 3px 3px,transparent 98%,#000) -3px -3px/9px 9px;transform:rotate(4deg)}
+.pc-stamp img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.pc-mark{position:absolute;right:62px;top:56px;width:84px;height:84px;border:2px solid rgba(215,38,30,.55);border-radius:50%;display:grid;place-items:center;transform:rotate(-14deg);pointer-events:none}
+.pc-mark::before{content:"";position:absolute;inset:7px;border:1px solid rgba(215,38,30,.45);border-radius:50%}
+.pc-mark span{font-family:var(--display);font-weight:800;font-size:9.5px;letter-spacing:.08em;color:rgba(215,38,30,.75);text-align:center;width:60px;line-height:1.2}
+.pc-line{display:flex;align-items:center;gap:8px;border-bottom:1.5px solid #c9c1ae;padding:7px 0 4px;font-size:14.5px;min-height:36px;min-width:0}
+.pc-line b{font-family:var(--hand);font-weight:400;font-size:22px}
+.pc-line a{font-size:13.5px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-bottom:1px dashed transparent}
+.pc-line a:hover{border-color:var(--ink)}
+.mini{flex:none;width:28px;height:28px;border-radius:7px;display:grid;place-items:center;color:var(--ink2);margin-left:auto;transition:.15s}
+.mini:hover{background:rgba(0,0,0,.07);color:var(--ink)}
+.mini svg{width:15px;height:15px}
+.mini.done{background:var(--ink);color:#fff}
+.pc-note{background:var(--note-y);--r:5deg;position:absolute;right:-12px;bottom:-4px;width:190px;z-index:4}
+.pc-note b{display:block;font-weight:400;font-size:22px;line-height:1.1}
+.pc-note small{display:block;font-size:14.5px;color:var(--ink2);margin-top:6px}
+.pc-arrow{position:absolute;right:196px;bottom:6px;width:92px;height:56px;color:var(--ink);transform:scaleX(-1) rotate(-14deg)}
+/* nút dẫn tới dự án */
+.field{color:inherit;cursor:pointer}
+.field .go,.stat .go,.tl .go{font-style:normal;display:inline-block;opacity:0;transform:translateX(-4px);transition:.2s;color:var(--red)}
+.field:hover .go,.stat:hover .go,.tl button:hover .go{opacity:1;transform:none}
+.field:hover b{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:4px}
+button.chip{cursor:pointer;transition:transform .15s,box-shadow .15s}
+button.chip:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--ink)}
+button.stat{text-align:left;cursor:pointer;display:block;width:100%}
+button.stat:hover b{background:linear-gradient(transparent 58%,var(--note-p) 58%,var(--note-p) 94%,transparent 94%)}
+.tl button{display:grid;grid-template-columns:150px minmax(0,1fr) 16px;gap:14px;width:100%;text-align:left;padding:13px 0;align-items:start}
+.tl li{display:block!important;padding:0!important}
+.tl button:hover b{color:var(--red2)}
+.partners button{font-size:22px;color:#4a4842;white-space:nowrap;transition:color .15s}
+.partners button:hover{color:var(--red)}
+.msec p.after{margin-top:4px}
 
 /* ---------- footer ---------- */
 .foot{position:relative;background:var(--ink);color:#fff;margin-top:40px;padding:70px 0 0;z-index:1}
@@ -413,9 +443,15 @@ section{position:relative;padding:110px 0}
   .svc{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
   .fields-m{grid-template-columns:1fr}
-  .tl li{grid-template-columns:1fr;gap:2px}
-  .paper{padding:40px 20px 24px 52px;transform:none}
-  .paper::before{left:36px}
+  .tl button{grid-template-columns:minmax(0,1fr) 16px;gap:2px 10px}
+  .tl button time{grid-column:1/-1}
+  .postcard{grid-template-columns:1fr;transform:rotate(1deg)}
+  .pc-msg{border-right:0;border-bottom:2px solid #d9d2c2;padding-bottom:20px}
+  .pc-addr{padding-top:108px}
+  .postwrap{padding:30px 0 120px}
+  .pc-arrow{display:none}
+  .pc-note{right:6px}
+  .socials>span{width:100%}
   .modal{padding:0}
   .mbox{min-height:100%}
   .mhead{height:230px}
@@ -491,22 +527,31 @@ section{position:relative;padding:110px 0}
    {
     "pos": "tl",
     "t": "Growth & Product",
-    "d": "Tăng trưởng, cộng đồng, creator và đo lường cho startup"
+    "d": "Tăng trưởng, cộng đồng, creator và đo lường cho startup",
+    "go": {
+     "filter": "growth"
+    }
    },
    {
     "pos": "bl",
     "t": "Content & Branding",
-    "d": "Nội dung, video, ấn phẩm và sự kiện offline"
+    "d": "Nội dung, video, ấn phẩm và sự kiện offline",
+    "go": {
+     "filter": "content"
+    }
    },
    {
     "pos": "br",
     "t": "Chiến lược thương hiệu",
-    "d": "Insight, định vị, IMC và go-to-market"
+    "d": "Insight, định vị, IMC và go-to-market",
+    "go": {
+     "skill": "insight"
+    }
    }
   ],
   "noteName": {
-   "a": "Minh Hiếu",
-   "b": "Nguyễn",
+   "a": "Nguyễn",
+   "b": "Minh Hiếu",
    "c": "Hà Nội · GPA 8.94/10"
   },
   "noteTodo": [
@@ -555,10 +600,22 @@ section{position:relative;padding:110px 0}
    "3+ năm đại học đi từ làm nội dung cho trường, giải case 50+ cuộc thi, đến chạy tăng trưởng cho startup game và nghiên cứu thị trường cho Product Studio. Cách làm: bắt đầu từ dữ liệu người dùng thật, chọn một giả thuyết, thử nhỏ, đo, rồi mới mở rộng."
   ],
   "chips": [
-   "Insight",
-   "Growth",
-   "Content",
-   "Branding"
+   {
+    "t": "Insight",
+    "skill": "insight"
+   },
+   {
+    "t": "Growth",
+    "skill": "growth"
+   },
+   {
+    "t": "Content",
+    "skill": "content"
+   },
+   {
+    "t": "Branding",
+    "filter": "content"
+   }
   ],
   "tools": [
    "Consumer insight",
@@ -571,15 +628,18 @@ section{position:relative;padding:110px 0}
   "stats": [
    {
     "v": "200K+",
-    "l": "người đăng ký GenPlay sau 3 tháng"
+    "l": "người đăng ký GenPlay sau 3 tháng",
+    "case": "genplay"
    },
    {
-    "v": "Top 2",
-    "l": "Á quân toàn quốc Marketing Hive 2025 (900 đội)"
+    "v": "Top 2/900",
+    "l": "Á quân toàn quốc Marketing Hive 2025",
+    "case": "marketinghive"
    },
    {
     "v": "50+",
-    "l": "cuộc thi giải case, startup"
+    "l": "cuộc thi giải case, startup",
+    "case": "thanhtich"
    }
   ],
   "traits": [
@@ -590,7 +650,7 @@ section{position:relative;padding:110px 0}
    },
    {
     "t": "Đam mê",
-    "d": "Á quân toàn quốc Marketing Hive (top 1 bảng đề Logitech). Finalist Khởi nghiệp cùng Kawai 2026.",
+    "d": "Á quân toàn quốc Marketing Hive (Top 1 bảng đề Logitech). Finalist Khởi nghiệp cùng Kawai 2026.",
     "c": "b"
    },
    {
@@ -605,32 +665,38 @@ section{position:relative;padding:110px 0}
     "time": "08/2026 – nay",
     "role": "Growth Assistant",
     "org": "Eastgate Software · Product Studio",
-    "now": true
+    "now": true,
+    "case": "vifai"
    },
    {
     "time": "04/2025 – 08/2026",
     "role": "Partnership & Growth Manager",
-    "org": "GenPlay · Cloud Phone Gaming"
+    "org": "GenPlay · Cloud Phone Gaming",
+    "case": "genplay"
    },
    {
     "time": "11/2025 – 02/2026",
     "role": "Marketing Intern",
-    "org": "The English Coach"
+    "org": "The English Coach",
+    "case": "englishcoach"
    },
    {
     "time": "06/2025 – 10/2025",
     "role": "Branding Intern",
-    "org": "Trường Đại học Thăng Long"
+    "org": "Trường Đại học Thăng Long",
+    "case": "thanglong"
    },
    {
     "time": "01/2026 – 06/2026",
     "role": "Google Student Ambassador",
-    "org": "Google"
+    "org": "Google",
+    "case": "thanhtich"
    },
    {
     "time": "02/2025 – 06/2026",
     "role": "Head of R&D",
-    "org": "Z Marketer"
+    "org": "Z Marketer",
+    "case": "thanhtich"
    }
   ]
  },
@@ -728,7 +794,7 @@ section{position:relative;padding:110px 0}
    "note": "Doanh thu do team business và tôi cùng thực hiện.",
    "sections": [
     {
-     "h": "Scope of work",
+     "h": "Phạm vi công việc",
      "list": [
       "Phát triển mạng lưới đối tác, hợp tác với các nhà sáng tạo nội dung và triển khai các sáng kiến phát triển cộng đồng; mở rộng thị trường.",
       "Quản lý vận hành cộng đồng, các kênh mạng xã hội và chương trình UGC; xây chiến lược nội dung để tăng tương tác và tỷ lệ giữ chân người dùng.",
@@ -749,7 +815,7 @@ section{position:relative;padding:110px 0}
     {
      "h": "Động cơ 1 · TikTok GenPlay Việt Nam",
      "p": [
-      "Xây kênh TikTok GenPlay từ con số 0 lên gần 4.000 follow sau 1 tháng triển khai. Một vài video viral organic thu hút gần 100.000 view, đẩy free traffic về phễu cộng đồng Discord GenPlay."
+      "Xây kênh TikTok GenPlay từ con số 0 lên gần 4.000 follower sau 1 tháng triển khai. Một vài video viral organic thu hút gần 100.000 view, đẩy free traffic về phễu cộng đồng Discord GenPlay."
      ],
      "stats": [
       [
@@ -918,7 +984,7 @@ section{position:relative;padding:110px 0}
       "Kết quả: 17 pain point · 276 từ khóa"
      ],
      "p": [
-      "Chẩn đoán 6 nguyên nhân thất bại: từ khóa gọi tên công việc thay vì nỗi đau, hút tệp \"kiếm tiền online\", chưa có từ khóa nào chạm điểm khác biệt thật của sản phẩm. Mỗi pain point đều có trích dẫn nguyên văn và nguồn."
+      "Chẩn đoán 6 nguyên nhân thất bại: từ khóa gọi tên công việc thay vì nỗi đau, hút tệp “kiếm tiền online”, chưa có từ khóa nào chạm điểm khác biệt thật của sản phẩm. Mỗi pain point đều có trích dẫn nguyên văn và nguồn."
      ]
     },
     {
@@ -926,9 +992,9 @@ section{position:relative;padding:110px 0}
      "list": [
       "Beachhead · Người ngại xuất hiện: 22–35 tuổi, không dám lộ mặt hoặc không có góc quay. Không có phương án 0đ thay thế nên dễ trả tiền nhất.",
       "Revenue engine · Affiliate đang muốn scale: đã làm 3–12 tháng, bị chặn ở trần sản lượng, coi 50K/video là chi phí vận hành.",
-      "Top funnel · Người mới, vốn mỏng: 18–26 tuổi, từng mất tiền mua hàng mẫu. Trả tiền khi được định vị \"rẻ hơn mua mẫu\"."
+      "Top funnel · Người mới, vốn mỏng: 18–26 tuổi, từng mất tiền mua hàng mẫu. Trả tiền khi được định vị “rẻ hơn mua mẫu”."
      ],
-     "p": [
+     "p2": [
       "Khuyến nghị: pilot 20–30 người trước với nhóm sẵn sàng trả tiền nhất (người ngại xuất hiện), đo kết quả rồi mới mở rộng sang hai nhóm còn lại."
      ]
     },
@@ -941,7 +1007,7 @@ section{position:relative;padding:110px 0}
       "Kling · 3"
      ],
      "list": [
-      "Bài \"vì sao tôi không dùng VEO3, Grok nữa\" đạt 1.600 reactions, cao gấp 50–100 lần các bài khác: thông điệp chuyển đổi mạnh nhất thị trường.",
+      "Bài “vì sao tôi không dùng VEO3, Grok nữa” đạt 1.600 reactions, cao gấp 50–100 lần các bài khác: thông điệp chuyển đổi mạnh nhất thị trường.",
       "Điểm hở của đối thủ: đổi logo sản phẩm so với ảnh tham chiếu. Giữ đúng sản phẩm là điều sống còn với e-commerce, cũng là tính năng cốt lõi của Vifai.",
       "So giá với freelancer Việt thay vì công cụ nước ngoài: rẻ hơn 4–60 lần."
      ]
@@ -1028,7 +1094,7 @@ section{position:relative;padding:110px 0}
    ],
    "sections": [
     {
-     "h": "Scope of work",
+     "h": "Phạm vi công việc",
      "p": [
       "Làm việc tại phòng Marketing và Truyền thông, tôi được trải nghiệm và học hỏi rất nhiều về sản xuất nội dung social media chuyên nghiệp: biên tập bài viết, kịch bản video, teaser sự kiện... Từ đó sản xuất được nhiều sản phẩm chất lượng và chỉn chu."
      ]
@@ -1037,8 +1103,8 @@ section{position:relative;padding:110px 0}
      "h": "Dự án chào tân sinh viên K38 · FutureU",
      "quote": "Our journeys of finding FutureU always Start with U – Go with Us.",
      "p": [
-      "FutureU là hành trình mỗi sinh viên cần chủ động kiến tạo và định hình tương lai hướng đến phiên bản U tốt nhất của bản thân. Bước vào cánh cổng đại học, các bạn tân sinh viên chuyển trạng thái từ \"chuẩn bị\" sang \"hành động\".",
-      "Để vươn xa trong chặng đường ấy, không chỉ có \"U\" mà sẽ cần có \"Us\": hành trình đẹp nhất là khi bạn đồng hành cùng ngôi nhà Thăng Long để khám phá tiềm năng bản thân, kết nối với những con người mới và cùng nhau cống hiến cho cộng đồng."
+      "FutureU là hành trình mỗi sinh viên cần chủ động kiến tạo và định hình tương lai hướng đến phiên bản U tốt nhất của bản thân. Bước vào cánh cổng đại học, các bạn tân sinh viên chuyển trạng thái từ “chuẩn bị” sang “hành động”.",
+      "Để vươn xa trong chặng đường ấy, không chỉ có “U” mà sẽ cần có “Us”: hành trình đẹp nhất là khi bạn đồng hành cùng ngôi nhà Thăng Long để khám phá tiềm năng bản thân, kết nối với những con người mới và cùng nhau cống hiến cho cộng đồng."
      ],
      "gallery": [
       [
@@ -1209,7 +1275,7 @@ section{position:relative;padding:110px 0}
      "h": "Giải pháp",
      "p": [
       "Người làm công việc sáng tạo trên nền tảng số là nhóm khách hàng tiềm năng nhất: bàn phím và chuột là vật bất ly thân trong công việc hằng ngày, và họ thường có phong cách sống đặc biệt đi kèm đồ dùng cá nhân theo phong cách riêng.",
-      "Nhóm này có một pain point lớn: struggle khi đào bới ý tưởng, mất tập trung, bí bách trong không gian làm việc. Smart Action giúp họ dễ dàng tập trung, capture idea và bước vào không gian riêng chỉ với một chạm."
+      "Nhóm này có một pain point lớn: loay hoay khi đào bới ý tưởng, mất tập trung, bí bách trong không gian làm việc. Smart Action giúp họ dễ dàng tập trung, ghi lại ý tưởng và bước vào không gian riêng chỉ với một chạm."
      ],
      "gallery": [
       [
@@ -1218,7 +1284,7 @@ section{position:relative;padding:110px 0}
       ],
       [
        "48",
-       "Big Idea \"Pop Your Creative Universe\" và Key Message"
+       "Big Idea “Pop Your Creative Universe” và Key Message"
       ],
       [
        "49",
@@ -1445,7 +1511,7 @@ section{position:relative;padding:110px 0}
      ]
     },
     {
-     "h": "Social post",
+     "h": "Bài đăng fanpage",
      "p": [
       "Biên tập và sản xuất nội dung: copywriting và thiết kế ấn phẩm trên fanpage. Một vài ấn phẩm có lượt tương tác tốt, đóng góp 10.000+ follower mới."
      ],
@@ -1500,7 +1566,7 @@ section{position:relative;padding:110px 0}
    "meta": [
     [
      "Tổ chức",
-     "Eastgate Software · Mệnh.io"
+     "Eastgate Software · MỆNH (menh.io)"
     ],
     [
      "Vai trò",
@@ -1643,7 +1709,7 @@ section{position:relative;padding:110px 0}
       ],
       [
        "24",
-       "Bài báo: \"Kawai Startup Fair 2026: Lộ diện Top 05 dự án vào Đêm Chung kết\""
+       "Bài báo: “Kawai Startup Fair 2026: Lộ diện Top 05 dự án vào Đêm Chung kết”"
       ]
      ]
     }
@@ -1786,7 +1852,8 @@ section{position:relative;padding:110px 0}
    "sub": "Bản đồ nhu cầu chăm sóc người cao tuổi",
    "cover": {
     "art": "tamgiao",
-    "bg": "#dfe9d8"
+    "bg": "#dfe9d8",
+    "cap": "bài phân loại từ 3 cộng đồng"
    },
    "pin": "tape",
    "meta": [
@@ -1917,15 +1984,15 @@ section{position:relative;padding:110px 0}
    "stats": [
     [
      "Top 2/900",
-     "Marketing Hive 2025: Á quân toàn quốc, top 1 bảng đề Logitech"
+     "Marketing Hive 2025: Á quân toàn quốc, Top 1 bảng đề Logitech"
     ],
     [
      "Top 5/400",
-     "Kawai Business Startup 2026: startup số 1 về hiệu suất và doanh thu"
+     "Kawai Startup Fair 2026: startup số 1 về hiệu suất và doanh thu"
     ],
     [
      "Top 30",
-     "The Valiant Marketer: Go-To-Market cho 5% thị phần năm đầu, hòa vốn trong 8 tháng"
+     "The Valiant Marketer: go-to-market cho 5% thị phần năm đầu, hòa vốn trong 8 tháng"
     ],
     [
      "Top 12",
@@ -2023,35 +2090,43 @@ section{position:relative;padding:110px 0}
   "partners": [
    [
     "Eastgate Software",
-    "sans"
+    "sans",
+    "vifai"
    ],
    [
     "GenPlay",
-    "bold"
+    "bold",
+    "genplay"
    ],
    [
     "The English Coach",
-    "serif"
+    "serif",
+    "englishcoach"
    ],
    [
     "ĐH Thăng Long",
-    "hand"
+    "hand",
+    "thanglong"
    ],
    [
     "Marketing Hive",
-    "bold"
+    "bold",
+    "marketinghive"
    ],
    [
     "Marketing On Air",
-    "serif"
+    "serif",
+    "pepsi"
    ],
    [
     "Kawai Startup Fair",
-    "sans"
+    "sans",
+    "kawai"
    ],
    [
     "Z Marketer",
-    "hand"
+    "hand",
+    "thanhtich"
    ]
   ]
  },
@@ -2065,14 +2140,17 @@ section{position:relative;padding:110px 0}
   "text": "Tôi sẵn sàng nhận dự án thật, học nhanh và chịu trách nhiệm về kết quả từ insight đến thực thi. Nhắn cho tôi qua email hoặc mạng xã hội nhé.",
   "emailBtn": "Gửi email cho tôi",
   "connect": "Hoặc kết nối qua:",
-  "formTitle": "Gửi lời nhắn nhanh",
-  "formTypes": [
-   "Thực tập",
-   "Toàn thời gian",
-   "Dự án / freelance",
-   "Trao đổi khác"
-  ],
-  "formNote": "Ứng dụng email của bạn sẽ mở sẵn nội dung này. Nếu không mở được, email của tôi đã được sao chép để bạn gửi thủ công."
+  "card": {
+   "label": "Bưu thiếp gửi bạn",
+   "msg": "Chào bạn! Nếu bạn đang tìm một người làm marketing bắt đầu từ dữ liệu thật và chịu trách nhiệm đến kết quả cuối cùng, tôi rất muốn được trao đổi thêm.",
+   "sign": "— Híu",
+   "to": "Gửi đến",
+   "stamp": "HÀ NỘI · 2026",
+   "note": [
+    "Sẵn sàng nhận việc",
+    "Marketing · Growth · Branding"
+   ]
+  }
  },
  "footer": {
   "copy": "© 2026 Nguyễn Minh Hiếu · Marketing & Growth · Hà Nội",
@@ -2119,6 +2197,8 @@ var ICON = {
 };
 
 /* ============ 3. Các khối trang ============ */
+/* data-filter = lọc theo nhóm dự án, data-skill = lọc theo năng lực, data-case = mở thẳng một dự án */
+function goAttr(g){ if (!g) return ''; if (g.case) return ' data-case="' + g.case + '"'; if (g.skill) return ' data-skill="' + g.skill + '"'; if (g.filter) return ' data-filter="' + g.filter + '"'; return ''; }
 function navLinks(){ return S.nav.map(function(n){ return '<a href="#' + n[0] + '" data-sec="' + n[0] + '">' + esc(n[1]) + '</a>'; }).join(''); }
 function renderNav(){
   $('#nav').innerHTML = '<div class="wrap"><a class="logo" href="#top" aria-label="Về đầu trang"><b>' + esc(S.name) + '</b><small>' + esc(S.kicker) + '</small></a>' +
@@ -2130,7 +2210,7 @@ function renderNav(){
 
 function renderHero(){
   var H = D.hero, nn = H.noteName, f = H.fields;
-  var field = function(x){ return '<div class="field f-' + x.pos + '"><b>' + esc(x.t) + '</b><span>' + esc(x.d) + '</span>' + (x.pos === 'tl' ? ICON.hookL : ICON.hookL) + '</div>'; };
+  var field = function(x){ return '<a class="field f-' + x.pos + '" href="#du-an"' + goAttr(x.go) + '><b>' + esc(x.t) + ' <i class="go">→</i></b><span>' + esc(x.d) + '</span>' + ICON.hookL + '</a>'; };
   var notes =
     '<div class="note n-todo" data-pin><i class="pin" data-k="2"></i>' + H.noteTodo.map(function(t, i){ return '<i class="' + (i ? 'k' : '') + '">' + esc(t) + '</i>'; }).join('') + '</div>' +
     '<div class="note n-quote"><i class="pin" data-k="3"></i>' + esc(H.noteQuote.q) + '<small>— ' + esc(H.noteQuote.by) + '</small></div>' +
@@ -2159,13 +2239,13 @@ function renderAbout(){
     '<figure class="polaroid reveal" style="--r:-3deg"><i class="tape"></i><span class="crown">' + ICON.crown + '</span><img src="' + img('portrait') + '" alt="Chân dung Nguyễn Minh Hiếu" loading="lazy"><figcaption>' + esc(A.caption) + '</figcaption></figure>' +
     '<div class="reveal"><div class="eyebrow">' + esc(A.eyebrow) + '</div><h2>' + esc(A.hello) + '<br>' + esc(A.iam) + '<br><span class="hl">' + esc(S.name) + '</span></h2>' +
       A.paras.map(function(p){ return '<p>' + esc(p) + '</p>'; }).join('') +
-      '<div class="chips">' + ICON.squig + A.chips.map(function(c){ return '<span class="chip">' + esc(c) + '</span>'; }).join('') + '</div>' +
+      '<div class="chips">' + ICON.squig + A.chips.map(function(c){ return '<button class="chip"' + goAttr(c) + ' title="Xem các dự án ' + esc(c.t) + '">' + esc(c.t) + '</button>'; }).join('') + '</div>' +
       '<div class="tools"><b>Thế mạnh:</b> ' + A.tools.map(esc).join(' · ') + '</div></div>' +
     '<i class="vline"></i>' +
-    '<div class="stats reveal">' + A.stats.map(function(s){ return '<div class="stat"><b>' + esc(s.v) + '</b><span>' + esc(s.l) + '</span></div>'; }).join('') + '</div>' +
+    '<div class="stats reveal">' + A.stats.map(function(s){ return '<button class="stat"' + goAttr(s) + '><b>' + esc(s.v) + '</b><span>' + esc(s.l) + ' <i class="go">→</i></span></button>'; }).join('') + '</div>' +
   '</div>' +
   '<div class="about-row2"><div class="traits">' + A.traits.map(function(t, i){ return '<div class="trait c-' + t.c + ' reveal" style="--r:' + [-2, 1.5, -1][i] + 'deg"><i class="tape"></i><h3>' + esc(t.t) + '</h3><p>' + esc(t.d) + '</p></div>'; }).join('') + '</div>' +
-  '<div class="notebook reveal" style="--r:1.2deg"><i class="pin"></i><h3>' + esc(A.timelineTitle) + '</h3><ol class="tl">' + A.timeline.map(function(t){ return '<li' + (t.now ? ' class="now"' : '') + '><time>' + esc(t.time) + '</time><div><b>' + esc(t.role) + '</b><span>' + esc(t.org) + '</span></div></li>'; }).join('') + '</ol></div></div>' +
+  '<div class="notebook reveal" style="--r:1.2deg"><i class="pin"></i><h3>' + esc(A.timelineTitle) + '</h3><ol class="tl">' + A.timeline.map(function(t){ return '<li' + (t.now ? ' class="now"' : '') + '><button' + goAttr(t) + '><time>' + esc(t.time) + '</time><div><b>' + esc(t.role) + '</b><span>' + esc(t.org) + '</span></div><i class="go">→</i></button></li>'; }).join('') + '</ol></div></div>' +
   '</div></section>';
 }
 
@@ -2173,7 +2253,7 @@ function coverHTML(p, inModal){
   var c = p.cover;
   if (c.img) return '<img src="' + img(c.img) + '" alt="' + esc(p.title) + '"' + (inModal ? '' : ' loading="lazy"') + '>';
   if (c.art === 'genplay') return '<div class="art art-ai"><img src="' + img(c.logo) + '" alt="GenPlay" style="width:74px;height:74px;object-fit:contain;background:#fff;border-radius:16px;padding:6px;margin-bottom:12px"><span class="big" style="font-size:52px">200.000+</span><span class="cap">người đăng ký sau 3 tháng</span></div>';
-  if (c.art === 'tamgiao') return '<div class="art"><span class="big">469</span><span class="cap">bài tâm sự, tin tuyển người<br>từ 3 cộng đồng chăm sóc người cao tuổi</span></div>';
+  if (c.art === 'tamgiao') return '<div class="art"><span class="big">469</span><span class="cap">' + esc(c.cap) + '</span></div>';
   if (c.art === 'ai') return '<div class="art art-ai"><span class="big">AI × 6</span><div class="grid6"><span>seeding</span><span>social</span><span>listening</span><span>outreach</span><span>data</span><span>dashboard</span></div></div>';
   if (c.art === 'awards') return '<div class="art">' + ICON.trophy + '<span class="big">50+</span><span class="cap">cuộc thi giải case & startup</span></div>';
   return '';
@@ -2213,7 +2293,7 @@ function renderProcess(){
     '<div class="eyebrow">' + esc(R.eyebrow) + '</div><h2 class="h-title">' + esc(R.title[0]) + ' <span class="hl">' + esc(R.title[1]) + '</span></h2>' +
     '<div class="steps"><svg class="wave" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 120 -5, 200 60, 330 30 S 540 0, 660 30 S 880 62, 1000 26" fill="none" stroke="currentColor" stroke-width="2"/></svg>' +
     R.steps.map(function(s, i){ return '<div class="step reveal"><div class="circ"><i class="pin"></i>0' + (i + 1) + '</div><h3>' + esc(s.t) + '</h3><em>' + esc(s.s) + '</em><p>' + esc(s.d) + '</p></div>'; }).join('') + '</div>' +
-    '<div class="partners reveal"><span>' + esc(R.partnersLabel) + '</span>' + R.partners.map(function(p){ return '<b class="p-' + p[1] + '">' + esc(p[0]) + '</b>'; }).join('') + '</div>' +
+    '<div class="partners reveal"><span>' + esc(R.partnersLabel) + '</span>' + R.partners.map(function(p){ return '<button class="p-' + p[1] + '" data-case="' + p[2] + '">' + esc(p[0]) + '</button>'; }).join('') + '</div>' +
   '</div></section>';
 }
 
@@ -2228,15 +2308,21 @@ function renderContact(){
         '<a href="' + esc(S.linkedin) + '" target="_blank" rel="noopener" aria-label="LinkedIn">' + ICON.li + '<span class="tip">LinkedIn</span></a>' +
         '<a href="tel:' + esc(S.phoneHref) + '" aria-label="Gọi điện">' + ICON.phone + '<span class="tip">' + esc(S.phone) + '</span></a>' +
         '<button id="copyMail" aria-label="Sao chép email">' + ICON.copy + '<span class="tip" id="copyTip">Sao chép email</span></button></div>' +
-      '<div class="info"><div><b>Email:</b> ' + esc(S.email) + '</div><div><b>Điện thoại:</b> ' + esc(S.phone) + '</div><div><b>Khu vực:</b> ' + esc(S.city) + '</div></div>' +
     '</div>' +
-    '<form class="paper reveal" id="form" novalidate style="--r:1.6deg"><i class="tape"></i><h3>' + esc(K.formTitle) + '</h3>' +
-      '<label for="f-name">Tên của bạn</label><input id="f-name" name="name" autocomplete="name" required>' +
-      '<label for="f-mail">Email của bạn</label><input id="f-mail" name="email" type="email" autocomplete="email" required>' +
-      '<label for="f-type">Loại cơ hội</label><select id="f-type" name="type">' + K.formTypes.map(function(t){ return '<option>' + esc(t) + '</option>'; }).join('') + '</select>' +
-      '<label for="f-msg">Lời nhắn</label><textarea id="f-msg" name="msg" placeholder="Kể tôi nghe về vị trí hoặc dự án của bạn..." required></textarea>' +
-      '<button class="btn" type="submit">Gửi lời nhắn ' + ICON.arrow + '</button><p class="formnote" id="formnote" aria-live="polite"></p>' +
-    '</form>' +
+    '<div class="postwrap reveal">' +
+      '<div class="postcard"><i class="tape"></i>' +
+        '<div class="pc-msg"><small>' + esc(K.card.label) + '</small><p>' + esc(K.card.msg) + '</p><b>' + esc(K.card.sign) + '</b></div>' +
+        '<div class="pc-addr"><div class="pc-stamp"><img src="' + img('portrait') + '" alt=""></div><div class="pc-mark" aria-hidden="true"><span>' + esc(K.card.stamp) + '</span></div>' +
+          '<small>' + esc(K.card.to) + '</small>' +
+          '<div class="pc-line"><b>' + esc(S.name) + '</b></div>' +
+          '<div class="pc-line"><a href="mailto:' + esc(S.email) + '">' + esc(S.email) + '</a><button class="mini" data-copy="' + esc(S.email) + '" aria-label="Sao chép email">' + ICON.copy + '</button></div>' +
+          '<div class="pc-line"><a href="tel:' + esc(S.phoneHref) + '">' + esc(S.phone) + '</a><button class="mini" data-copy="' + esc(S.phone) + '" aria-label="Sao chép số điện thoại">' + ICON.copy + '</button></div>' +
+          '<div class="pc-line">' + esc(S.city) + '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="note pc-note"><i class="pin"></i><b>' + esc(K.card.note[0]) + '</b><small>' + esc(K.card.note[1]) + '</small></div>' +
+      '<svg class="pc-arrow" viewBox="0 0 100 60" aria-hidden="true"><path d="M95 8 C 60 2, 20 14, 10 50 M10 50 l-4 -14 M10 50 l13 -7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>' +
+    '</div>' +
   '</div></div></section>';
 }
 
@@ -2254,7 +2340,7 @@ function caseHTML(p){
   var i = P.indexOf(p), prev = P[(i - 1 + P.length) % P.length], next = P[(i + 1) % P.length];
   var stats = function(arr){ return arr && arr.length ? '<div class="mstats">' + arr.map(function(s){ return '<div class="mstat"><b>' + esc(s[0]) + '</b><span>' + esc(s[1]) + '</span></div>'; }).join('') + '</div>' : ''; };
   var gallery = function(arr){ if (!arr || !arr.length) return ''; return '<div class="gal' + (arr.length === 1 ? ' one' : '') + '">' + arr.map(function(g, k){ return '<figure style="--r:' + (arr.length === 1 ? 0 : rot(k) * .6) + 'deg" data-g="' + g[0] + '" data-cap="' + esc(g[1]) + '"><img src="' + img(g[0]) + '" alt="' + esc(g[1]) + '" loading="lazy"><figcaption>' + esc(g[1]) + '</figcaption></figure>'; }).join('') + '</div>'; };
-  var flow = function(arr){ return arr ? '<div class="flow">' + arr.map(function(t){ var k = t.indexOf(' · '), h = k > 0 ? t.slice(0, k) : '', b = k > 0 ? t.slice(k + 3) : t; if (!h){ var c = t.indexOf(': '); if (c > 0){ h = t.slice(0, c); b = t.slice(c + 2); } } return '<div>' + (h ? '<b>' + esc(h) + '</b>' : '') + esc(b) + '</div>'; }).join('') + '</div>' : ''; };
+  var flow = function(arr){ return arr ? '<div class="flow">' + arr.map(function(x){ var a = x.indexOf(' · '), c = x.indexOf(': '), k, n; if (a > 0 && (c < 0 || a < c)) { k = a; n = 3; } else if (c > 0) { k = c; n = 2; } else { k = -1; } var h = k > 0 ? x.slice(0, k) : '', b = k > 0 ? x.slice(k + n) : x; return '<div>' + (h ? '<b>' + esc(h) + '</b>' : '') + esc(b) + '</div>'; }).join('') + '</div>' : ''; };
   var sec = function(s){
     return '<div class="msec"><h3>' + esc(s.h) + '</h3>' +
       (s.quote ? '<div class="mquote">“' + esc(s.quote) + '”</div>' : '') +
@@ -2263,9 +2349,10 @@ function caseHTML(p){
       (s.p || []).map(function(t){ return '<p>' + esc(t) + '</p>'; }).join('') +
       (s.chips ? '<div class="mchips">' + s.chips.map(function(c){ return '<span>' + esc(c) + '</span>'; }).join('') + '</div>' : '') +
       (s.list ? '<ul class="checks">' + s.list.map(function(l){ return '<li>' + ICON.check + '<span>' + esc(l) + '</span></li>'; }).join('') + '</ul>' : '') +
+      (s.p2 || []).map(function(x){ return '<p class="after">' + esc(x) + '</p>'; }).join('') +
       stats(s.stats) + gallery(s.gallery) + '</div>';
   };
-  var embeds = (p.embeds || []).map(function(e, k){ return '<div class="embed"><div class="ph ' + e.kind + '" role="button" tabindex="0" data-src="' + esc(e.src) + '" data-kind="' + e.kind + '" data-t="' + esc(e.t) + '"><span class="play">' + ICON.play + '</span>' + esc(e.t) + '<small style="font-family:var(--body);font-size:12.5px;opacity:.7">Bấm để tải và phát</small></div><p class="alt">Nếu không xem được, <a href="' + esc(e.link) + '" target="_blank" rel="noopener">mở trực tiếp</a>.</p></div>'; }).join('');
+  var embeds = (p.embeds || []).map(function(e, k){ return '<div class="embed"><div class="ph ' + e.kind + '" role="button" tabindex="0" data-src="' + esc(e.src) + '" data-kind="' + e.kind + '" data-t="' + esc(e.t) + '"><span class="play">' + ICON.play + '</span>' + esc(e.t) + '<small style="font-family:var(--body);font-size:12.5px;opacity:.7">' + (e.kind === 'tall' || /video/i.test(e.t) ? 'Bấm để phát video' : 'Bấm để xem tài liệu') + '</small></div><p class="alt">Nếu không xem được, <a href="' + esc(e.link) + '" target="_blank" rel="noopener">mở trực tiếp</a>.</p></div>'; }).join('');
   var links = (p.links || []).concat((p.embeds || []).map(function(e){ return [e.t, e.link]; }));
   return '<div class="mbox"><button class="mclose" id="mclose" aria-label="Đóng">' + ICON.close + '</button>' +
     '<div class="mhead" style="--cbg:' + esc(p.cover.bg) + '">' + coverHTML(p, true) + '<div class="ht"><small>' + esc(CATNAME[p.cat]) + '</small><h2 id="mtitle">' + esc(p.title) + '</h2><p>' + esc(p.sub) + '</p></div></div>' +
@@ -2278,19 +2365,33 @@ function caseHTML(p){
       '</aside></div>' +
     '<div class="mnav"><button class="btn" data-go="' + prev.id + '">' + ICON.left + ' ' + esc(prev.title) + '</button><button class="btn" data-go="' + next.id + '">' + esc(next.title) + ' ' + ICON.arrow + '</button></div></div>';
 }
-function openCase(id, push){
+function openCase(id, mode){
   var p = P.filter(function(x){ return x.id === id; })[0]; if (!p) return;
-  if (cur < 0) lastFocus = document.activeElement;
+  var wasOpen = cur >= 0;
+  if (!wasOpen) lastFocus = document.activeElement;
   cur = P.indexOf(p);
   var m = $('#modal'); m.innerHTML = caseHTML(p); m.classList.add('open'); m.scrollTop = 0; document.body.style.overflow = 'hidden';
   $('#mclose').focus();
-  if (push !== false) { try { history.replaceState(null, '', '#case-' + id); } catch (e) {} }
+  try {
+    if (mode === 'push' && !wasOpen) history.pushState({ pfCase: id }, '', '#case-' + id);
+    else if (mode !== 'none') history.replaceState(history.state && history.state.pfCase ? { pfCase: id } : null, '', '#case-' + id);
+  } catch (e) {}
 }
-function closeCase(){
+function hideCase(){
   var m = $('#modal'); m.classList.remove('open'); m.innerHTML = ''; document.body.style.overflow = ''; cur = -1;
-  try { history.replaceState(null, '', '#du-an'); } catch (e) {}
-  if (lastFocus && lastFocus.focus) lastFocus.focus();
+  if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
 }
+/* đóng bằng nút: nếu đã mở bằng thao tác bấm thì lùi lịch sử, để nút Back của điện thoại cũng đóng được */
+function closeCase(){
+  if (cur < 0) return;
+  if (history.state && history.state.pfCase) { history.back(); return; }
+  hideCase();
+  try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+}
+window.addEventListener('popstate', function(){
+  var h = location.hash;
+  if (h.indexOf('#case-') === 0) openCase(h.slice(6), 'none'); else if (cur >= 0) hideCase();
+});
 function openLB(list, k){
   gal = list; gi = k; var lb = $('#lb');
   lb.innerHTML = '<button class="x" aria-label="Đóng">' + ICON.close + '</button>' + (list.length > 1 ? '<button class="pv" aria-label="Ảnh trước">' + ICON.left + '</button><button class="nx" aria-label="Ảnh sau">' + ICON.arrow + '</button>' : '') + '<figure><img alt=""><figcaption></figcaption></figure>';
@@ -2331,14 +2432,23 @@ function setFilter(k, label){
 }
 $('#filters').addEventListener('click', function(e){ var b = e.target.closest('button'); if (!b) return; if (b.classList.contains('skill')) setFilter('all'); else setFilter(b.dataset.f); });
 $('#moreBtn').addEventListener('click', function(){ expanded = !expanded; applyFilter(); if (!expanded) $('#du-an').scrollIntoView(); });
-$$('.see').forEach(function(b){ b.addEventListener('click', function(){ var s = D.services.items.filter(function(x){ return x.key === b.dataset.skill; })[0]; setFilter('skill:' + s.key, s.t); $('#du-an').scrollIntoView({ behavior: 'smooth' }); }); });
 applyFilter();
 
 /* mở case study */
-$('#grid').addEventListener('click', function(e){ var c = e.target.closest('.card'); if (c) openCase(c.dataset.id); });
+$('#grid').addEventListener('click', function(e){ var c = e.target.closest('.card'); if (c) openCase(c.dataset.id, 'push'); });
+/* mọi nút dẫn tới dự án ở các mục khác (hero, giới thiệu, chuyên môn, đối tác) */
+document.addEventListener('click', function(e){
+  if (e.target.closest('#modal, #grid, #filters')) return;
+  var el = e.target.closest('[data-case], [data-skill], [data-filter]'); if (!el) return;
+  e.preventDefault();
+  if (el.dataset.case) { openCase(el.dataset.case, 'push'); return; }
+  if (el.dataset.skill) { var s = D.services.items.filter(function(x){ return x.key === el.dataset.skill; })[0]; setFilter('skill:' + s.key, s.t); }
+  else setFilter(el.dataset.filter);
+  $('#du-an').scrollIntoView({ behavior: 'smooth' });
+});
 $('#modal').addEventListener('click', function(e){
   if (e.target === e.currentTarget || e.target.closest('#mclose')) { closeCase(); return; }
-  var go = e.target.closest('[data-go]'); if (go) { openCase(go.dataset.go); return; }
+  var go = e.target.closest('[data-go]'); if (go) { openCase(go.dataset.go, 'replace'); return; }
   var f = e.target.closest('.gal figure');
   if (f) { var figs = $$('figure', f.parentNode); openLB(figs.map(function(x){ return [x.dataset.g, x.dataset.cap]; }), figs.indexOf(f)); return; }
   var ph = e.target.closest('.embed .ph'); if (ph) loadEmbed(ph);
@@ -2357,8 +2467,8 @@ document.addEventListener('keydown', function(e){
   }
   if (cur >= 0) {
     if (e.key === 'Escape') closeCase();
-    else if (e.key === 'ArrowLeft' && !/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) openCase(P[(cur - 1 + P.length) % P.length].id);
-    else if (e.key === 'ArrowRight' && !/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) openCase(P[(cur + 1) % P.length].id);
+    else if (e.key === 'ArrowLeft') openCase(P[(cur - 1 + P.length) % P.length].id, 'replace');
+    else if (e.key === 'ArrowRight') openCase(P[(cur + 1) % P.length].id, 'replace');
     else if (e.key === 'Tab') { var fs = $$('#modal button, #modal a, #modal [tabindex="0"], #modal iframe'); if (fs.length) { var a = fs[0], z = fs[fs.length - 1]; if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); } else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); } } }
   }
   if (e.key === 'Escape' && $('#sheet').classList.contains('open')) toggleSheet(false);
@@ -2369,23 +2479,19 @@ function toggleSheet(on){ $('#sheet').classList.toggle('open', on); $('#burger')
 $('#burger').addEventListener('click', function(){ toggleSheet(!$('#sheet').classList.contains('open')); });
 $('#sheet').addEventListener('click', function(e){ if (e.target === e.currentTarget || e.target.closest('a')) toggleSheet(false); });
 
-/* liên hệ: sao chép email + form */
+/* liên hệ: sao chép email, số điện thoại */
 function copyEmail(cb){
   var done = function(){ cb && cb(true); };
   try { navigator.clipboard.writeText(S.email).then(done, function(){ fallbackCopy(); done(); }); } catch (e) { fallbackCopy(); done(); }
 }
 function fallbackCopy(){ var t = document.createElement('textarea'); t.value = S.email; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); } catch (e) {} t.remove(); }
 $('#copyMail').addEventListener('click', function(){ copyEmail(function(){ var t = $('#copyTip'); t.textContent = 'Đã sao chép!'; t.classList.add('show'); setTimeout(function(){ t.textContent = 'Sao chép email'; t.classList.remove('show'); }, 1800); }); });
-$('#form').addEventListener('submit', function(e){
-  e.preventDefault();
-  var f = e.target, name = f.name.value.trim(), mail = f.email.value.trim(), type = f.type.value, msg = f.msg.value.trim(), note = $('#formnote');
-  if (!name || !mail || !msg || !/^\S+@\S+\.\S+$/.test(mail)) { note.className = 'formnote err'; note.textContent = 'Bạn điền giúp tôi tên, email hợp lệ và lời nhắn nhé.'; return; }
-  var subject = '[Portfolio] ' + type + ' · ' + name;
-  var body = msg + '\n\n---\n' + name + '\n' + mail;
-  copyEmail();
-  note.className = 'formnote ok'; note.textContent = D.contact.formNote;
-  window.location.href = 'mailto:' + S.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+document.addEventListener('click', function(e){
+  var b = e.target.closest('[data-copy]'); if (!b) return;
+  var v = b.dataset.copy, ok = function(){ b.classList.add('done'); b.setAttribute('aria-label', 'Đã sao chép'); setTimeout(function(){ b.classList.remove('done'); }, 1600); };
+  try { navigator.clipboard.writeText(v).then(ok, function(){ fallbackCopyText(v); ok(); }); } catch (x) { fallbackCopyText(v); ok(); }
 });
+function fallbackCopyText(v){ var ta = document.createElement('textarea'); ta.value = v; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (x) {} ta.remove(); }
 
 /* thanh tiến độ, nav đổi nền, mục đang xem */
 var secs = S.nav.map(function(n){ return document.getElementById(n[0]); }).filter(Boolean);
@@ -2430,7 +2536,7 @@ if (window.matchMedia('(pointer:fine)').matches && !window.matchMedia('(prefers-
 }
 
 /* mở thẳng một case từ đường dẫn #case-... */
-var h0 = location.hash; if (h0.indexOf('#case-') === 0) openCase(h0.slice(6), false);
+var h0 = location.hash; if (h0.indexOf('#case-') === 0) openCase(h0.slice(6), 'none');
 window.__pf = { openCase: openCase, closeCase: closeCase, setFilter: setFilter, data: D };
 })();
 </script>
